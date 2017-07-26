@@ -7,11 +7,11 @@ library(reshape2)
 library(caret)
 library(ggmap)
 library(randomForest)
+load('functions.rds')
 
 ## ___________________________________________________________________________________________________________________
 # Data Prep
 ## ___________________________________________________________________________________________________________________
-
 
 ## read file
 df <- read_airbnb()
@@ -131,7 +131,6 @@ for(x in 1:5){
   }
 
 }
-
 
 ggplot(data = knnresults) +
   geom_line(aes(x =  k,y =  MAE,color= City))  + 

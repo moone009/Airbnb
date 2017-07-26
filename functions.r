@@ -1,4 +1,4 @@
-score.sentiment = function(sentence,pos,neg){
+score.sentiment <- function(sentence,pos,neg){
   require(plyr)
   require(stringr)
 
@@ -17,7 +17,7 @@ score.sentiment = function(sentence,pos,neg){
   
 }
 
-regression_metrics <- function(model,df,trained_Y,Number_of_predictors){
+score.sentiment <- function(model,df,trained_Y,Number_of_predictors){
   
   RMSE = function(predictions, actual){
     sqrt(mean((predictions - actual)^2))
@@ -176,8 +176,7 @@ read_airbnb <- function(){
   
 }
 
-earth.dist <- function (long1, lat1, long2, lat2)
-{
+earth.dist <- function (long1, lat1, long2, lat2){
   rad <- pi/180
   a1 <- lat1 * rad
   a2 <- long1 * rad
@@ -254,7 +253,6 @@ trim <-  function(x){ require(stringr)
   x <- str_trim(x, side = c("both"))
   return(x)}
 
-
 normalize <- function(x) { 
   x <- as.matrix(x)
   minAttr=apply(x, 2, min)
@@ -265,7 +263,6 @@ normalize <- function(x) {
   attr(x, 'normalized:max') = maxAttr
   return (x)
 } 
-
 
 wordcloud <- function(text){
   
@@ -297,7 +294,6 @@ wordcloud <- function(text){
   return(dm)
   
 }
-
 
 rfImp <- function(df,target,returnval){
   
@@ -350,8 +346,7 @@ rfImp <- function(df,target,returnval){
   }
 }
 
-
-
+save(score.sentiment,score.sentiment,Static_Missing_Vars,changeclass,word.count,read_airbnb,earth.dist,trim,process_airbnb,normalize,wordcloud,rfImp,file='functions.rds')
 
 
 
