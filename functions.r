@@ -50,6 +50,11 @@ Static_Missing_Vars <- function (df) {
   return(df)
 }
 
+mae <- function(predictions,actual){
+     error <- predictions - actual
+      mean(abs(error))
+    }
+
 changeclass <- function(df) {
   
   for (z in 1:length(colnames(df))) {
@@ -272,7 +277,7 @@ rfImp <- function(df,target,returnval){
   }
 }
 
-save(score.sentiment,score.sentiment,Static_Missing_Vars,changeclass,word.count,read_airbnb,earth.dist,trim,process_airbnb,normalize,wordcloud,rfImp,file='functions.rds')
+save(score.sentiment,mae,score.sentiment,Static_Missing_Vars,changeclass,word.count,read_airbnb,earth.dist,trim,process_airbnb,normalize,wordcloud,rfImp,file='functions.rds')
 
 
 
