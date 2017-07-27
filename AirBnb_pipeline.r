@@ -27,7 +27,7 @@ df <- process_airbnb(df)
 ## Create summary stats
 Stats =  df %>% 
   group_by(city)%>% 
-  summarise(
+  dplyr::summarise(
     Mean=mean(average_rate_per_night),
     Min=min(average_rate_per_night),
     Max=max(average_rate_per_night),
