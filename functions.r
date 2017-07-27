@@ -227,7 +227,7 @@ wordcloud <- function(text){
 }
 
 rfImp <- function(df,target,returnval){
-  
+  require(sqldf)
   # Extract predictors
   predictors <- names(df)[names(df) != target]
   
